@@ -10,7 +10,6 @@ end
 
 get('/display') do
   @player = params.fetch('player')
-#  @computer = params.fetch('computer')
   turn = ""
   @comprand = turn.compSel()
 
