@@ -1,8 +1,36 @@
-<h1> Welcome to Scrabble Word Play!! </h1>
-<form action = '/result'>
-  <div class="form-group">
-    <label for="result">Enter a Sentence to play:</label>
-    <input type="text" id = "result" name="result" class="form-control">
+<h1> Welcome to Rock, Paper and Scissors Game </h1>
+<form action = '/display'>
+  <div class="row">
+  <div id="player" class ="col-md-6">
+    <label for='player'></label>
+    <h2> Player </h2>
+    <div class="radio">
+      <label><input type="radio" id="rock" name="player" value ="rock">rock </label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" id="scissors" name="player" value ="scissors">scissors</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" id = "paper"name="player" value = "paper">paper</label>
+    </div>
+
   </div>
-  <button type="submit" class="btn-success"> Send</button>
+
+  <div id ="computer" class="col-md-6">
+    <label for='computer'></label>
+    <h2>Computer </h2>
+    <div class="radio">
+      <label><input type="radio" id="rock" name="computer" value="rock" >rock </label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" id="scissors" name="computer" value="scissors">scissors</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" id = "paper" name="computer" value="paper">paper</label>
+    </div>
+  </div>
+</div>
+    <div id =button>
+    <button class="btn btn-default center-block" type="submit">play</button>
+  </div>
 </form>

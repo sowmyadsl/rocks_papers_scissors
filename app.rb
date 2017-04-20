@@ -1,13 +1,25 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/scrabble')
-also_reload('lib/**/*.rb')
+also_reload('lib/**/*.rocksgame')
+require('./lib/rocksgame')
+require('pry')
 
 get('/') do
   erb(:index)
 end
 
-get('/result') do
-  @result = params.fetch('result').scrabble()
-  erb(:result)
+get('/display') do
+  @player = params.fetch('player')
+  @computer = params.fetch('computer')
+
+  @result = @player.beats(@computer)
+  if (@result == "true")
+    @output="player Wins!"
+  elsif (@result == "tie")
+    @output = "Its a Tie!"
+  else
+    @output="computer Wins!"
+  end
+  erb(:winner)
+
 end
