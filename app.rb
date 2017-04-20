@@ -10,15 +10,17 @@ end
 
 get('/display') do
   @player = params.fetch('player')
-  @computer = params.fetch('computer')
+#  @computer = params.fetch('computer')
+  turn = ""
+  @comprand = turn.compSel()
 
-  @result = @player.beats(@computer)
+  @result = @player.beats(@comprand)
   if (@result == "true")
-    @output="player Wins!"
+    @output="Player"
   elsif (@result == "tie")
     @output = "Its a Tie!"
   else
-    @output="computer Wins!"
+    @output="Computer"
   end
   erb(:winner)
 
